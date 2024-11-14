@@ -1,0 +1,235 @@
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts-3by.pages.dev/roboto-v32-latin/roboto-v32-latin-regular.woff2")
+    format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://fonts-3by.pages.dev/roboto-v32-latin/roboto-v32-latin-700.woff2")
+    format("woff2");
+}
+
+:root {
+  /* Color  */
+  --Error-color: hsl(4, 100%, 67%);
+  --Heading-Button-color: hsl(234, 29%, 20%);
+  --SubHeading-focusBorder-color: hsl(235, 18%, 26%);
+  --border-color: hsl(231, 7%, 60%);
+  --White: hsl(0, 0%, 100%);
+  --gradient-color1:  hsl(344, 63%, 51%);
+  --gradient-color2:  hsl(4, 100%, 67%);
+
+  /* Font  */
+
+  /* font family  */
+
+  --ff: "Roboto";
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  /* place-content: center; */
+  font-family: var(--ff), sans-serif;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+ul,
+ol{
+    padding: 0;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+.hero-img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.content {
+  max-width: 450px;
+  margin: 30px 20px;
+  display: grid;
+  gap: 20px;
+  grid-auto-flow: row;
+  place-self: center;
+}
+
+ .heading {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--Heading-Button-color);
+  line-height: 1;
+}
+
+ .sub-heading,
+.content .ul-list {
+  color: var(--SubHeading-color);
+}
+
+::marker {
+    content: url(../assets/images/icon-list.svg);
+    margin-top: 2px;
+}
+li {
+  list-style: none;
+  list-style-position: outside;
+  padding-left: 20px ;
+  margin-left: 20px;
+}
+
+.content .input-field{
+    padding-top: 20px;
+}
+
+.input-field .title-input-error{
+    display: flex;
+    justify-content: space-between;
+}
+
+.content .input-field .title-input-error .input-title{
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--Heading-Button-color);
+}
+
+.content .input-field .title-input-error .error{
+    display: none;
+    font-size: 12px;
+    color: var(--Error-color);
+
+}
+input{
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    outline: none;
+    
+    border:2px solid var(--border-color);
+}
+
+input:focus{
+    border-color: var(--SubHeading-focusBorder-color) ;
+}
+
+.btn{
+    width: 100%;
+    background-color: var(--Heading-Button-color);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    padding-block: 15px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+}
+
+.btn:hover{
+    
+    background: linear-gradient(90deg, var(--gradient-color1), var(--gradient-color2));
+    position: relative;
+}
+
+.btn:hover::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* z-index: -1; */
+    background:inherit;
+    border-radius: inherit;
+    translate:0 1.5rem;
+    filter: blur(1rem);
+    opacity: .5;
+}
+
+  /* mobile success msg */
+  .thanks-msg-container{
+    display: none;
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    inset: 0;
+  }
+.thanks-msg {
+    max-width: 450px;
+  height: inherit;
+  display: grid;
+  grid-template-rows: .95fr 50px;
+  place-self: center;
+  margin-inline: 20px;
+  margin-bottom: 30px;
+}
+
+.thanks-msg .msg-content{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    justify-content: center;
+}
+.msg-content img{
+    width: 50px;
+}
+
+
