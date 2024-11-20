@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" sizes="32x32"
       href="./assets/images/favicon-32x32.png">
     <link rel="stylesheet" href="./styles/style.css">
+    <script defer src="./scripts/script.js"></script>
 
     <title>Frontend Mentor | Newsletter sign-up form with success
       message</title>
@@ -15,7 +16,7 @@
   </head>
   <body>
 
-    <main>
+    <main id="main-section">
       <header>
         <picture class="img-section">
           <source class="hero-img"
@@ -43,14 +44,15 @@
         <section class="input-field">
           <div class="title-input-error">
             <h3 class="input-title">Email address</h3>
-            <h3 class="error">Error</h3>
+            <h3 class="error" id="error-msg"></h3>
           </div>
-          <input type="email" autofocus required
+          <input id="email" type="email" autofocus required
             placeholder="email@company.com">
 
         </section>
 
-        <button class="btn"> Subscribe to monthly newsletter</button>
+        <button class="btn" id="subscribe-btn"> Subscribe to monthly
+          newsletter</button>
       </section>
       <!-- Sign-up form end -->
     </main>
@@ -61,16 +63,20 @@
       <div class="thanks-msg">
         <section class="msg-content">
           <img src="./assets/images/icon-success.svg" alt>
-  
+
           <h1 class="heading">Thanks for subscribing!</h1>
-  
-          <p class="sub-heading"> A confirmation email has been sent to <span
-              id="user">ash@loremcompany.com</span>.
+
+          <p class="sub-heading"> A confirmation email has been sent to <a
+              id="open-gmail" href="https://mail.google.com/" target="_blank"
+              rel="noopener noreferrer">
+              <span
+                id="user"></span>
+            </a>.
             Please open it and click the button inside to confirm your
             subscription.</p>
         </section>
-  
-        <button class="btn">Dismiss message</button>
+
+        <button class="btn" id="dismiss-btn">Dismiss message</button>
       </div>
     </div>
 
