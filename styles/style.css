@@ -67,6 +67,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-family: var(--ff), sans-serif;
   height: 80vh;
+  background-color: var(--Heading-Button-color);
 }
 
 /* Ensures images, pictures, videos, canvas, and SVGs scale correctly */
@@ -130,6 +131,7 @@ main{
   width: 100%;
   display: grid;
   grid-auto-flow: row;
+  background-color: white;
 }
 
 /* Hero image styling */
@@ -306,7 +308,6 @@ a:hover{
     height: 34.375rem;  /* 550px */
     width: 56.25rem;    /* 900px */
     display: grid;
-    border: 2px solid black;
     grid-template-columns: 1.1fr 0.9fr;
     justify-self: center ;
     margin-top: calc(100vh - 85vh);

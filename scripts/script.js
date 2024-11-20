@@ -79,5 +79,5 @@ dismissBtn.addEventListener("click", ()=>{
     mainSection.style.display = "grid";  // Show the form section again
     email.value = "";  // Clear the email input field
     clearError();  // Clear any error messages
-    document.body.style.backgroundColor = "white";
+    // document.body.style.backgroundColor = "white";
 });
