@@ -60,13 +60,13 @@ function validateError() {
 
 // Function to display error messages and apply error styling to the email field
 function setError(message) {
-    email.classList.add(".error-style");  // Add error styling to the email input
+    email.classList.add("error-style");  // Add error styling to the email input
     errorMsg.textContent = `${message}`;  // Display the error message
 }
 
 // Function to clear error messages and reset the email input styling
 function clearError() {
-    email.classList.remove(".error-style");  // Remove error styling from the email input
+    email.classList.remove("error-style");  // Remove error styling from the email input
     errorMsg.textContent = "";  // Clear the error message text
 }
 
@@ -79,4 +79,5 @@ dismissBtn.addEventListener("click", ()=>{
     mainSection.style.display = "grid";  // Show the form section again
     email.value = "";  // Clear the email input field
     clearError();  // Clear any error messages
+    document.body.style.backgroundColor = "white";
 });
