@@ -32,7 +32,7 @@
 
 ### Mobile message
 
-![Mobile Succes Message](./design/own%20design/mobile-thanks-msg.jpeg)
+![Mobile Succes Message](./design/own%20design/mobile-thanks-message.jpeg)
 
 ## Project Functionality
 
