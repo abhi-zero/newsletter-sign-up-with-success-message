@@ -1,4 +1,5 @@
-@font-face {
+/* Font definitions for different font weights */
+@font-face { 
   font-display: swap;
   font-family: "Roboto";
   font-style: normal;
@@ -15,46 +16,60 @@
     format("woff2");
 }
 
+/* Defining global CSS variables for color and font */
 :root {
-  /* Color  */
+  /* Color palette */
   --Error-color: hsl(4, 100%, 67%);
   --Heading-Button-color: hsl(234, 29%, 20%);
   --SubHeading-focusBorder-color: hsl(235, 18%, 26%);
   --border-color: hsl(231, 7%, 60%);
   --White: hsl(0, 0%, 100%);
-  --gradient-color1:  hsl(344, 63%, 51%);
-  --gradient-color2:  hsl(4, 100%, 67%);
+  --gradient-color1: hsl(344, 63%, 51%);
+  --gradient-color2: hsl(4, 100%, 67%);
 
-  /* Font  */
-
-  /* font family  */
-
+  /* Font family */
   --ff: "Roboto";
+
+  /* Font size */
+  --fs-100 : 0.75rem;   /* 12px */
+  --fs-200 : 0.875rem;  /* 14px */
+  --fs-300 : 2rem;  /* 36px */
+  --fs-400 : 3.25rem;  /* 52px */
+
+  /* spacing */
+  --space-100: 0.625rem;  /* 10px */
+  --space-200: 1.25rem;   /* 20px */
+  --space-300: 1.875rem;  /* 30px */
+  --space-400: 2.5rem;    /* 40px */
+  --space-500: 3.125rem;  /* 50px */
+  --space-600: 3.75rem;   /* 60px */
+  --space-700: 4.375rem;  /* 70px */
+  --space-800: 5rem;      /* 80px */
+  --space-900: 5.625rem;  /* 90px */
+  --space-1000: 6.25rem; /* 100px */
 }
 
-/* 1. Use a more-intuitive box-sizing model */
+/* Global reset for box-sizing */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* 2. Remove default margin */
+/* Remove default margin from all elements */
 * {
   margin: 0;
 }
 
+/* Body styling */
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  height: 100%;
-  width: 100%;
-  display: grid;
-  /* place-content: center; */
   font-family: var(--ff), sans-serif;
+  height: 80vh;
 }
 
-/* 5. Improve media defaults */
+/* Ensures images, pictures, videos, canvas, and SVGs scale correctly */
 img,
 picture,
 video,
@@ -64,7 +79,7 @@ svg {
   max-width: 100%;
 }
 
-/* 6. Inherit fonts for form controls */
+/* Inherit font styles for form controls */
 input,
 button,
 textarea,
@@ -72,12 +87,13 @@ select {
   font: inherit;
 }
 
+/* Remove padding from lists */
 ul,
-ol{
-    padding: 0;
+ol {
+  padding: 0;
 }
 
-/* 7. Avoid text overflows */
+/* Prevent text overflow for headings and paragraphs */
 p,
 h1,
 h2,
@@ -88,7 +104,7 @@ h6 {
   overflow-wrap: break-word;
 }
 
-/* 8. Improve line wrapping */
+/* Improve line wrapping for paragraphs and headings */
 p {
   text-wrap: pretty;
 }
@@ -101,135 +117,253 @@ h6 {
   text-wrap: balance;
 }
 
+/* Error styling for the email input */
+.error-style {
+  border-color: var(--Error-color);
+  background-color: bisque;
+  color: var(--Error-color);
+}
+
+/* Main container styling */
+main{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-auto-flow: row;
+}
+
+/* Hero image styling */
 .hero-img {
   width: 100%;
   object-fit: cover;
 }
 
+/* Content container styling */
 .content {
-  max-width: 450px;
-  margin: 30px 20px;
+  max-width: 28.125rem;  /* 450px */
+  margin: var(--space-300) var(--space-200);
   display: grid;
-  gap: 20px;
+  gap: var(--space-200);
   grid-auto-flow: row;
   place-self: center;
 }
 
- .heading {
-  font-size: 36px;
+/* Heading styling */
+.heading {
+  font-size: var(--fs-300);
   font-weight: 700;
   color: var(--Heading-Button-color);
   line-height: 1;
 }
 
- .sub-heading,
+/* Subheading and list item styling */
+.sub-heading,
 .content .ul-list {
   color: var(--SubHeading-color);
 }
 
+/* Custom list marker */
 ::marker {
-    content: url(../assets/images/icon-list.svg);
-    margin-top: 2px;
+  content: url(../assets/images/icon-list.svg);
+  margin-top: 2px;
 }
+
+/* Styling for list items */
 li {
   list-style: none;
   list-style-position: outside;
-  padding-left: 20px ;
-  margin-left: 20px;
+  padding-left: var(--space-200);
+  margin-left: var(--space-200);
 }
 
-.content .input-field{
-    padding-top: 20px;
+/* Styling for input fields */
+.content .input-field {
+  padding-top: var(--space-200);
 }
 
-.input-field .title-input-error{
-    display: flex;
-    justify-content: space-between;
+/* Error message for input fields */
+.input-field .title-input-error {
+  display: flex;
+  justify-content: space-between;
 }
 
-.content .input-field .title-input-error .input-title{
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--Heading-Button-color);
+.content .input-field .title-input-error .input-title {
+  font-size: var(--fs-100);
+  font-weight: 700;
+  color: var(--Heading-Button-color);
 }
 
-.content .input-field .title-input-error .error{
-    display: none;
-    font-size: 12px;
-    color: var(--Error-color);
-
-}
-input{
-    width: 100%;
-    padding: 10px 20px;
-    border-radius: 10px;
-    outline: none;
-    
-    border:2px solid var(--border-color);
+.content .input-field .title-input-error .error {
+  font-size: var(--fs-100);
+  color: var(--Error-color);
 }
 
-input:focus{
-    border-color: var(--SubHeading-focusBorder-color) ;
+/* Input field styling */
+input {
+  width: 100%;
+  padding: var(--space-100) var(--space-200);
+  border-radius: var(--space-100);
+  outline: none;
+  border: 2px solid var(--border-color);
+  cursor: pointer;
 }
 
-.btn{
-    width: 100%;
-    background-color: var(--Heading-Button-color);
-    color: white;
-    font-size: 14px;
-    font-weight: 700;
-    padding-block: 15px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    transition: all .4s ease-in-out;
+/* Focus state styling for input */
+input:focus {
+  border-color: var(--SubHeading-focusBorder-color);
+  cursor: text;
 }
 
-.btn:hover{
-    
-    background: linear-gradient(90deg, var(--gradient-color1), var(--gradient-color2));
-    position: relative;
+/* Button styling */
+.btn {
+  --btn-space: 0.938rem;
+
+  width: 100%;
+  background-color: var(--Heading-Button-color);
+  color: white;
+  font-size: var(--fs-200);
+  font-weight: 700;
+  padding-block: var(--btn-space);
+  border-radius: var(--space-100);
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
 }
 
-.btn:hover::after{
-    content: "";
-    position: absolute;
-    inset: 0;
-    /* z-index: -1; */
-    background:inherit;
-    border-radius: inherit;
-    translate:0 1.5rem;
-    filter: blur(1rem);
-    opacity: .5;
+/* Hover state styling for button */
+.btn:hover {
+  background: linear-gradient(
+    90deg,
+    var(--gradient-color1),
+    var(--gradient-color2)
+  );
+  position: relative;
 }
 
-  /* mobile success msg */
-  .thanks-msg-container{
-    display: none;
-    height: 100vh;
-    width: 100%;
-    background-color: white;
-    position: absolute;
-    inset: 0;
-  }
+/* Button hover effect */
+.btn:hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  border-radius: inherit;
+  translate: 0 1.5rem;
+  filter: blur(1rem);
+  opacity: 0.5;
+}
+
+/* Mobile-specific success message container */
+.thanks-msg-container {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  inset: 0;
+}
+
+/* Success message styling */
 .thanks-msg {
-    max-width: 450px;
+  max-width: 28.125rem;  /* 450px */
   height: inherit;
   display: grid;
-  grid-template-rows: .95fr 50px;
+  grid-template-rows: 0.95fr 50px;
   place-self: center;
-  margin-inline: 20px;
-  margin-bottom: 30px;
+  margin-inline: var(--space-200);
+  margin-bottom: var(--space-300);
 }
 
-.thanks-msg .msg-content{
-    display: flex;
-    flex-direction: column;
-    gap:30px;
+.thanks-msg .msg-content {
+  max-width: 28.125rem;  /* 450px */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-300);
+  justify-content: center;
+  text-wrap:balance ;
+}
+
+.msg-content img {
+  width: 3.125rem;  /* 50px */
+}
+
+/* Link styling */
+a{
+  color: var(--Error-color);
+  font-weight:700;
+  text-decoration: none;
+  transition: color .3s ease-in-out;
+}
+
+/* Link hover state */
+a:hover{
+  color: brown;
+}
+
+/* Media query for larger screens (min-width 750px) */
+@media (min-width: 750px){
+  /* Main layout for larger screens */
+  main {
+    height: 34.375rem;  /* 550px */
+    width: 56.25rem;    /* 900px */
+    display: grid;
+    border: 2px solid black;
+    grid-template-columns: 1.1fr 0.9fr;
+    justify-self: center ;
+    margin-top: calc(100vh - 85vh);
+    place-content: center;
+    border-radius: var(--space-300);
+  }
+
+  /* Hero image styling for larger screens */
+  .hero-img {
+    width: 100%;
+    height: 31.25rem;   /* 500px */
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  /* Header positioning for larger screens */
+  header {
+    grid-column: 2;
+    padding-right: var(--space-200);
+  }
+
+  /* Content positioning for larger screens */
+  .content{
+    grid-column: 1;
+    grid-row: 1;
+    margin: var(--space-500) ;
+  }
+
+  /* Heading size adjustment for larger screens */
+  .heading {
+    font-size: var(--fs-400);
+  }
+
+  /* Success message container for larger screens */
+  .thanks-msg-container {
+    display: none;
+    height: 28.125rem;  /* 450px */
+    width: 28.125rem;  /* 450px */
+    background-color: white;
+    place-self :center ;
+    border-radius: 30px;
+  }
+
+  /* Success message grid layout for larger screens */
+  .thanks-msg {
+    height: 23.125rem;   /* 370px */
+    display: grid;
+    grid-template-rows: auto 50px;
+    gap: var(--space-200);
+    margin:var(--space-400);
+  }
+
+  /* Styling for message content in success message */
+  .thanks-msg .msg-content {
+    display: grid;
+    gap: var(--space-200);
+    grid-auto-flow: row;
     justify-content: center;
+  }
 }
-.msg-content img{
-    width: 50px;
-}
-
-
